@@ -18,6 +18,7 @@ Tokyo?") from an authoritative source instead of guessing.
 - [Features](#features)
 - [How it works](#how-it-works)
 - [Installation](#installation)
+- [Downloads](#downloads)
 - [Usage](#usage)
 - [Output reference](#output-reference)
 - [`date` cheatsheet](#date-cheatsheet)
@@ -99,10 +100,29 @@ user ──▶ Claude ──▶ (matches "datetime" skill trigger)
 
 ## Installation
 
-Chronos can be installed three ways, depending on where you want it
-available.
+Chronos can be installed four ways, depending on where you want it available.
 
-### Option A — clone the standalone repo
+### Option A — upload to claude.ai
+
+For use in [claude.ai](https://claude.ai) conversations (Pro, Max, Team, or
+Enterprise with code execution enabled):
+
+1. Download **[chronos-datetime-skill.zip](https://github.com/rrishi0309/current_datetime_claude_skill/releases/download/v1.0.0/chronos-datetime-skill.zip)**
+   from the [v1.0.0 release](https://github.com/rrishi0309/current_datetime_claude_skill/releases/tag/v1.0.0).
+2. In claude.ai, go to **Settings → Features** and upload the zip.
+
+Claude will automatically invoke the skill in any conversation that needs the
+current date or time — no further configuration required.
+
+To build the zip yourself from a clone:
+
+```bash
+git clone https://github.com/rrishi0309/current_datetime_claude_skill.git
+cd current_datetime_claude_skill
+zip chronos-datetime-skill.zip SKILL.md scripts/get_datetime.sh
+```
+
+### Option B — clone the standalone repo (Claude Code)
 
 ```bash
 git clone https://github.com/rrishi0309/current_datetime_claude_skill.git
@@ -113,7 +133,7 @@ chmod +x scripts/get_datetime.sh
 Point your Claude Code project at this directory, or copy its contents into
 an existing project's `skills/datetime/` folder.
 
-### Option B — drop into an existing project
+### Option C — drop into an existing project (Claude Code)
 
 From the root of the project where you want the skill available:
 
@@ -124,7 +144,7 @@ cp /path/to/chronos/scripts/get_datetime.sh skills/datetime/scripts/
 chmod +x skills/datetime/scripts/get_datetime.sh
 ```
 
-### Option C — user-level install
+### Option D — user-level install (Claude Code)
 
 To make Chronos available in every Claude Code session on your machine,
 place it under your user-scope skills directory:
@@ -138,6 +158,14 @@ chmod +x ~/.claude/skills/datetime/scripts/get_datetime.sh
 
 No further configuration is required — Claude discovers the skill the next
 time it starts a session in that scope.
+
+---
+
+## Downloads
+
+| Version | Download | Description |
+| ------- | -------- | ----------- |
+| [v1.0.0](https://github.com/rrishi0309/current_datetime_claude_skill/releases/tag/v1.0.0) | [chronos-datetime-skill.zip](https://github.com/rrishi0309/current_datetime_claude_skill/releases/download/v1.0.0/chronos-datetime-skill.zip) | Pre-packaged zip for claude.ai upload |
 
 ---
 
